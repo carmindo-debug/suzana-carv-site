@@ -1,0 +1,45 @@
+:root {
+  /* CORES DA MARCA */
+
+  --color-primary: #c38a77;
+  --color-primary-hover: #b27a68;
+
+  --color-secondary: #e9b6a5;
+  --color-secondary-light: #f8e9e3;
+
+  --color-dark: #59352d;
+
+  --color-background: #f9f9f9;
+  --color-white: #ffffff;
+
+  /* TEXTOS */
+
+  --color-text-primary: #59352d;
+  --color-text-secondary: #6f625e;
+
+  /* BORDAS */
+
+  --color-border: rgba(89, 53, 45, 0.15);
+
+  /* SOMBRAS */
+
+  --shadow-sm: 0 4px 12px rgba(89, 53, 45, 0.08);
+
+  --shadow-md: 0 12px 30px rgba(89, 53, 45, 0.12);
+
+  --shadow-lg: 0 25px 60px rgba(89, 53, 45, 0.15);
+
+  /* TRANSIÇÕES */
+
+  --transition-fast: 0.3s ease;
+
+  --transition-normal: 0.4s ease;
+
+  /* BORDER RADIUS */
+
+  --radius-button: 999px;
+
+  --radius-card: 18px;
+
+  --radius-image: 30px;
+}

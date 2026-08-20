@@ -1,0 +1,425 @@
+.contact {
+  width: 100%;
+  padding: 110px 0;
+  background: #ffffff;
+  scroll-margin-top: 90px;
+}
+
+.contact__container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+/* CARD */
+
+.contact__card {
+  position: relative;
+
+  margin-top: 0;
+  padding: 42px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(89, 53, 45, 0.06);
+  border-radius: 32px;
+
+  background: #f9f9f9;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(195, 138, 119, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+.contact__card:hover{
+    transform: translateY(-6px);
+
+    border-color: rgba(195,138,119,.25);
+
+    box-shadow:
+0 26px 60px rgba(0,0,0,.08),
+0 12px 30px rgba(195,138,119,.10);
+}
+
+.contact__card:hover .contact__icon{
+    transform: scale(1.08);
+}
+
+/* .contact__card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -70px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(195, 138, 119, 0.12);
+
+  filter: blur(8px);
+} */
+
+.contact__badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(89, 53, 45, 0.1);
+
+  color: #59352d;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 18px;
+}
+
+.contact__title {
+  font-size: 42px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  color: #08060d;
+
+  margin-bottom: 22px;
+}
+
+.contact__description {
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: #625d69;
+
+  margin-bottom: 34px;
+}
+
+/* CONTATOS */
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-bottom: 34px;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+  border: 1px solid rgba(89, 53, 45, 0.06);
+  border-radius: 18px;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+}
+
+.contact__item:hover {
+  transform: translateX(8px);
+
+  box-shadow: 0 14px 28px rgba(89, 53, 45, 0.1);
+}
+
+.contact__icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+  135deg,
+  rgba(195, 138, 119, 0.18),
+  rgba(195, 138, 119, 0.08)
+);
+
+  backdrop-filter: blur(10px);
+
+  color: #59352d;
+
+  padding: 13px;
+
+  font-size: 18px;
+
+  transition: all 0.35s ease;
+}
+.contact__item:hover .contact__icon {
+  transform: scale(1.05);
+}
+
+.contact__item small {
+  display: block;
+
+  color: #8a818f;
+
+  font-size: 13px;
+
+  margin-bottom: 3px;
+}
+
+.contact__item strong {
+  display: block;
+
+  color: #08060d;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+/* ===========================
+   BOTÃO
+=========================== */
+
+.contact__button {
+  width: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 17px 28px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #59352d 0%, #7c5145 100%);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  position: relative;
+
+  overflow: hidden;
+  letter-spacing: 0.3px;
+  transition: all 0.35s ease;
+}
+
+.contact__button::before {
+  content: "";
+
+  position: absolute;
+
+  left: -120%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+
+  transition: 0.7s;
+}
+
+.contact__button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 20px 40px rgba(89, 53, 45, 0.28);
+  filter: brightness(1.04);
+}
+
+.contact__button:hover::before {
+  left: 120%;
+}
+
+.contact__button-icon {
+  display: inline-flex;
+
+  transition: 0.3s ease;
+}
+
+.contact__button-arrow {
+  display: inline-flex;
+
+  transition: 0.3s ease;
+}
+
+.contact__button:hover .contact__button-icon {
+  transform: translateX(5px);
+}
+
+.contact__button:hover .contact__button-arrow {
+  transform: translateX(8px);
+}
+
+/* ===========================
+   MAPA
+=========================== */
+
+.contact__map {
+  position: relative;
+
+  align-self: center;
+
+  margin-top: 0;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(89, 53, 45, 0.08);
+  border-radius: 32px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.contact__map::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  top: -30px;
+  right: -30px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(195, 138, 119, 0.22),
+    rgba(233, 182, 165, 0.14)
+  );
+
+  filter: blur(4px);
+
+  z-index: -1;
+}
+
+.contact__map:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 35px 75px rgba(89, 53, 45, 0.18);
+}
+
+.contact__map iframe {
+  width: 100%;
+
+  height: 620px;
+
+  border: none;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.contact__map:hover iframe {
+  transform: scale(1.03);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+  .contact {
+    padding: 90px 0;
+  }
+
+  .contact__container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .contact__card {
+    padding: 36px;
+  }
+
+  .contact__title {
+    font-size: 38px;
+  }
+
+  .contact__map iframe {
+    height: 450px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 70px 0;
+  }
+
+  .contact__card {
+    padding: 28px;
+  }
+
+  .contact__title {
+    font-size: 31px;
+  }
+
+  .contact__description {
+    font-size: 16px;
+  }
+
+  .contact__item {
+    padding: 14px;
+  }
+
+  .contact__icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 16px;
+  }
+  .contact__card {
+    transition: all 0.35s ease;
+  }
+
+  .contact__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 55px rgba(89, 53, 45, 0.12);
+  }
+}

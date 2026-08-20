@@ -1,10 +1,11 @@
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/Footer/Footer";
 function AppLayout({ children }) {
   return (
     <>
-      Navbar
+      <Navbar />
       <main>{children}</main>
-      {/* Footer */}
+      <Footer/>
       {/* WhatsApp CTA */}
       {/* Back To Top */}
       {/* Suzy (Assistente Virtual) */}
