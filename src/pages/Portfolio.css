@@ -1338,6 +1338,7 @@
   .portfolio-modal__close {
     transition: none;
   }
+}
   /* ========================================
    HERO PORTFÓLIO — VERSÃO PREMIUM FINAL
 ======================================== */
@@ -3481,5 +3482,4 @@
     font-size: 0.75rem;
     line-height: 1.5;
   }
-}
 }
