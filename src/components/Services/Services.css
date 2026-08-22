@@ -209,6 +209,11 @@ letter-spacing: .2px;
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .service-card,
+.service-card:nth-child(4),
+.service-card:nth-child(5) {
+  grid-column: auto;
+}
 
   .services__title {
     font-size: 36px;
@@ -228,6 +233,11 @@ letter-spacing: .2px;
   .services__grid {
     grid-template-columns: 1fr;
   }
+  .service-card,
+.service-card:nth-child(4),
+.service-card:nth-child(5) {
+  grid-column: 1 / -1;
+}
 
   .services__title {
     font-size: 32px;

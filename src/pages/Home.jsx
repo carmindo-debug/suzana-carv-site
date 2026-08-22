@@ -4,7 +4,6 @@ import About from "@/components/About/About";
 import Results from "@/components/Results/Results";
 import CTA from "@/components/CTA/CTA";
 import Contact from "@/components/Contact/Contact";
-import Footer from "@/components/Footer/Footer";
 
 function Home() {
   return (
@@ -15,7 +14,6 @@ function Home() {
       <Results />
       <CTA />
       <Contact />
-      <Footer />
     </main>
   );
 }
