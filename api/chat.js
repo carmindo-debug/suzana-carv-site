@@ -108,7 +108,15 @@ export default async function handler(request, response) {
     );
 
     if (!geminiResponse.ok) {
-      return response.status(503).json({
+  const errorDetails = await geminiResponse.text();
+
+  console.error(
+    "Gemini API error:",
+    geminiResponse.status,
+    errorDetails,
+  );
+
+  return response.status(503).json({
         error:
           "A Suzy está temporariamente indisponível. Tente novamente ou fale pelo WhatsApp.",
       });
