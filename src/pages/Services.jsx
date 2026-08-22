@@ -113,7 +113,7 @@ function Services() {
     return () => {
       window.clearInterval(carouselInterval);
     };
-  }, [isCarouselPaused, carouselImages.length]);
+  }, [activeSlide, isCarouselPaused, carouselImages.length]);
 
   const selectSlide = (slideIndex) => {
     setActiveSlide(slideIndex);
@@ -174,7 +174,11 @@ function Services() {
             className="services-hero__visual"
             onMouseEnter={() => setIsCarouselPaused(true)}
             onMouseLeave={() => setIsCarouselPaused(false)}
-            onFocusCapture={() => setIsCarouselPaused(true)}
+            onFocusCapture={() => {
+  if (window.matchMedia("(hover: hover)").matches) {
+    setIsCarouselPaused(true);
+  }
+}}
             onBlurCapture={() => setIsCarouselPaused(false)}
             role="region"
             aria-roledescription="carrossel"
