@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   padding: 20px 0;
-  background: rgba(249, 249, 249, 0.94);
+  background: rgba(245, 236, 232, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
@@ -32,7 +32,7 @@
 }
 
 .navbar__logo {
-  width: 190px;
+  width: 210px;
   height: auto;
   display: block;
 }
@@ -138,7 +138,7 @@
 }
 
 .navbar--scrolled .navbar__logo {
-  width: 170px;
+  width: 190px;
 }
 /* ========================================
    NAVBAR — MENU MOBILE
@@ -204,11 +204,11 @@
   }
 
   .navbar__logo {
-    width: 145px;
+    width: 160px;
   }
 
   .navbar--scrolled .navbar__logo {
-    width: 135px;
+    width: 150px;
   }
 
   /* HAMBÚRGUER */
@@ -365,7 +365,7 @@
   }
 
   .navbar__logo {
-    width: 125px;
+    width: 140px;
   }
 
   .navbar--scrolled {
@@ -373,7 +373,7 @@
   }
 
   .navbar--scrolled .navbar__logo {
-    width: 118px;
+    width: 132px;
   }
 
   .navbar__toggle {
