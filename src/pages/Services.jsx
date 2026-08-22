@@ -38,6 +38,7 @@ function Services() {
 
   const procedures = [
     {
+      id: "design-de-sobrancelhas",
       image: designSobrancelhas,
       title: "Design de Sobrancelhas",
       description:
@@ -49,6 +50,7 @@ function Services() {
       ],
     },
     {
+      id: "brow-lamination",
       image: browLamination,
       title: "Brow Lamination",
       description:
@@ -60,6 +62,7 @@ function Services() {
       ],
     },
     {
+      id: "carv-brows-hydragloss-labial",
       image: carvBrowsHydragloss,
       title: "Carv Brows + Hydragloss Labial",
       description:
@@ -71,6 +74,7 @@ function Services() {
       ],
     },
     {
+      id: "descoloracao-de-sobrancelhas",
       image: descoloracaoSobrancelhas,
       title: "Descoloração de Sobrancelhas",
       description:
@@ -82,6 +86,7 @@ function Services() {
       ],
     },
     {
+      id: "design-com-coloracao",
       image: designColoracao,
       title: "Design com Coloração",
       description:
@@ -240,6 +245,7 @@ function Services() {
           <div className="services-procedures__list">
             {procedures.map((procedure, index) => (
               <article
+              id={procedure.id}
                 className={`procedure ${
                   index % 2 !== 0 ? "procedure--reverse" : ""
                 }`}

@@ -15,6 +15,7 @@ function Services() {
       number: "01",
       image: designSobrancelhas,
       title: "Design de Sobrancelhas",
+      href: "/servicos#design-de-sobrancelhas",
       description:
         "Design personalizado para valorizar sua expressão e manter a naturalidade.",
     },
@@ -22,6 +23,7 @@ function Services() {
       number: "02",
       image: browLamination,
       title: "Brow Lamination",
+      href: "/servicos#brow-lamination",
       className: "service-image--brow",
       description:
         "Técnica que proporciona sobrancelhas alinhadas, sofisticadas e naturais.",
@@ -30,6 +32,7 @@ function Services() {
       number: "03",
       image: carvBrowsHydragloss,
       title: "Carv Brows + Hydragloss Labial",
+      href: "/servicos#carv-brows-hydragloss-labial",
       description:
         "Combinação de técnicas para realçar sobrancelhas e lábios com elegância.",
     },
@@ -37,6 +40,7 @@ function Services() {
       number: "04",
       image: descoloracaoSobrancelhas,
       title: "Descoloração de Sobrancelhas",
+      href: "/servicos#descoloracao-de-sobrancelhas",
       description:
         "Técnica que cria harmonia visual e um resultado moderno e sofisticado.",
     },
@@ -44,6 +48,7 @@ function Services() {
       number: "05",
       image: designColoracao,
       title: "Design com Coloração",
+      href: "/servicos#design-com-coloracao",
       className: "service-image--coloracao",
       description:
         "Definição e coloração personalizada para destacar sua beleza natural.",
@@ -83,7 +88,7 @@ function Services() {
 
                 <p>{service.description}</p>
 
-                <a href="/contato">
+                <a href={service.href}>
                   Saiba mais
                   <FaArrowRight />
                 </a>
