@@ -203,7 +203,7 @@ function Footer() {
                   <strong>Galeria Amazonas</strong>
 
                   <small>
-                    Rua Venâncio de Oliveira Santos, 57
+                    Rua Venâncio de Oliveira dos Santos, 57
                     <br />
                     Sala 112 — Vilar dos Teles
                     <br />
