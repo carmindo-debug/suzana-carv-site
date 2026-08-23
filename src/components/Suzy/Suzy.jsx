@@ -60,13 +60,15 @@ function Suzy() {
     ]);
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      window.setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100);
-    }
-  }, [isOpen]);
+ useEffect(() => {
+  const supportsHover = window.matchMedia("(hover: hover)").matches;
+
+  if (isOpen && supportsHover) {
+    window.setTimeout(() => {
+      inputRef.current?.focus();
+    }, 100);
+  }
+}, [isOpen]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
