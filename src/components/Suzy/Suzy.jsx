@@ -37,6 +37,10 @@ function Suzy() {
     firstName: "",
     procedure: "",
   });
+  const [viewportMetrics, setViewportMetrics] = useState({
+  offsetTop: 0,
+  height: null,
+});
 
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
@@ -69,7 +73,30 @@ function Suzy() {
     }, 100);
   }
 }, [isOpen]);
+useEffect(() => {
+  const visualViewport = window.visualViewport;
 
+  if (!visualViewport) {
+    return undefined;
+  }
+
+  const updateViewportMetrics = () => {
+    setViewportMetrics({
+      offsetTop: visualViewport.offsetTop,
+      height: visualViewport.height,
+    });
+  };
+
+  updateViewportMetrics();
+
+  visualViewport.addEventListener("resize", updateViewportMetrics);
+  visualViewport.addEventListener("scroll", updateViewportMetrics);
+
+  return () => {
+    visualViewport.removeEventListener("resize", updateViewportMetrics);
+    visualViewport.removeEventListener("scroll", updateViewportMetrics);
+  };
+}, []);
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
       behavior: "smooth",
@@ -286,6 +313,12 @@ function Suzy() {
       {isOpen && (
         <section
           className="suzy__panel"
+          style={{
+    "--suzy-viewport-top": `${viewportMetrics.offsetTop}px`,
+    "--suzy-viewport-height": viewportMetrics.height
+      ? `${viewportMetrics.height}px`
+      : "100dvh",
+  }}
           role="dialog"
           aria-label="Conversa com a assistente virtual Suzy"
         >

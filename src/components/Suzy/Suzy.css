@@ -468,18 +468,23 @@
   }
 
     .suzy__panel {
-    top: calc(12px + env(safe-area-inset-top));
+    top: calc(
+  var(--suzy-viewport-top, 0px) +
+  12px +
+  env(safe-area-inset-top)
+);
     right: 12px;
     bottom: auto;
     width: calc(100vw - 24px);
     height: min(
-      660px,
-      calc(
-        100dvh - 24px -
-        env(safe-area-inset-top) -
-        env(safe-area-inset-bottom)
-      )
-    );
+  660px,
+  calc(
+    var(--suzy-viewport-height, 100dvh) -
+    24px -
+    env(safe-area-inset-top) -
+    env(safe-area-inset-bottom)
+  )
+);
     border-radius: 22px;
   }
 
