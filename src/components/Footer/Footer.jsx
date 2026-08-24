@@ -247,7 +247,10 @@ function Footer() {
             </address>
           </div>
         </div>
-
+<div
+          id="suzy-footer-slot"
+          className="footer__suzy-slot"
+        />
         <div className="footer__divider" />
 
         <div className="footer__bottom">

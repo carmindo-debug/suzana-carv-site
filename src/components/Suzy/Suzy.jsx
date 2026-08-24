@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   FaCommentDots,
   FaPaperPlane,
@@ -41,7 +42,8 @@ function Suzy() {
   offsetTop: 0,
   height: null,
 });
-
+const [footerSlot, setFooterSlot] = useState(null);
+const [isFooterSlotVisible, setIsFooterSlotVisible] = useState(false);
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
   const messageIdRef = useRef(1);
@@ -95,6 +97,41 @@ useEffect(() => {
   return () => {
     visualViewport.removeEventListener("resize", updateViewportMetrics);
     visualViewport.removeEventListener("scroll", updateViewportMetrics);
+  };
+}, []);
+useEffect(() => {
+  const slot = document.getElementById("suzy-footer-slot");
+  const mobileQuery = window.matchMedia("(max-width: 900px)");
+
+  if (!slot) {
+    return undefined;
+  }
+
+  setFooterSlot(slot);
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setIsFooterSlotVisible(
+        mobileQuery.matches && entry.isIntersecting,
+      );
+    },
+    {
+      threshold: 0.5,
+    },
+  );
+
+  const handleScreenChange = () => {
+    if (!mobileQuery.matches) {
+      setIsFooterSlotVisible(false);
+    }
+  };
+
+  observer.observe(slot);
+  mobileQuery.addEventListener("change", handleScreenChange);
+
+  return () => {
+    observer.disconnect();
+    mobileQuery.removeEventListener("change", handleScreenChange);
   };
 }, []);
   useEffect(() => {
@@ -307,7 +344,21 @@ useEffect(() => {
       setIsLoading(false);
     }
   };
+const renderLauncher = () => (
+  <button
+    type="button"
+    className="suzy__launcher"
+    onClick={() => setIsOpen(true)}
+    aria-label="Abrir assistente virtual Suzy"
+  >
+    <span className="suzy__launcher-icon" aria-hidden="true">
+      <FaCommentDots />
+      <FaStar />
+    </span>
 
+    <span>Suzy</span>
+  </button>
+);
   return (
     <div className="suzy">
       {isOpen && (
@@ -482,21 +533,10 @@ useEffect(() => {
         </section>
       )}
 
-      {!isOpen && (
-        <button
-          type="button"
-          className="suzy__launcher"
-          onClick={() => setIsOpen(true)}
-          aria-label="Abrir assistente virtual Suzy"
-        >
-          <span className="suzy__launcher-icon" aria-hidden="true">
-            <FaCommentDots />
-            <FaStar/>
-          </span>
-
-          <span>Suzy</span>
-        </button>
-      )}
+      {!isOpen &&
+  (isFooterSlotVisible && footerSlot
+    ? createPortal(renderLauncher(), footerSlot)
+    : renderLauncher())}
     </div>
   );
 }
