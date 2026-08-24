@@ -101,7 +101,8 @@ useEffect(() => {
 }, []);
 useEffect(() => {
   const slot = document.getElementById("suzy-footer-slot");
-  const mobileQuery = window.matchMedia("(max-width: 900px)");
+  const footerQuery = window.matchMedia("(max-width: 900px)");
+  const visualViewport = window.visualViewport;
 
   if (!slot) {
     return undefined;
@@ -109,29 +110,73 @@ useEffect(() => {
 
   setFooterSlot(slot);
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      setIsFooterSlotVisible(
-        mobileQuery.matches && entry.isIntersecting,
-      );
-    },
-    {
-      threshold: 0.5,
-    },
-  );
+  const updateFooterSlotVisibility = () => {
+    const slotRect = slot.getBoundingClientRect();
+    const viewportTop = visualViewport?.offsetTop ?? 0;
+    const viewportHeight =
+      visualViewport?.height ?? window.innerHeight;
+    const viewportBottom = viewportTop + viewportHeight;
 
-  const handleScreenChange = () => {
-    if (!mobileQuery.matches) {
-      setIsFooterSlotVisible(false);
-    }
+    const visibleTop = Math.max(slotRect.top, viewportTop);
+    const visibleBottom = Math.min(slotRect.bottom, viewportBottom);
+    const visibleHeight = Math.max(
+      0,
+      visibleBottom - visibleTop,
+    );
+
+    const minimumVisibleHeight = Math.min(
+      slotRect.height * 0.5,
+      44,
+    );
+
+    setIsFooterSlotVisible(
+      footerQuery.matches &&
+        visibleHeight >= minimumVisibleHeight,
+    );
   };
 
-  observer.observe(slot);
-  mobileQuery.addEventListener("change", handleScreenChange);
+  updateFooterSlotVisibility();
+
+  window.addEventListener(
+    "scroll",
+    updateFooterSlotVisibility,
+    { passive: true },
+  );
+  window.addEventListener("resize", updateFooterSlotVisibility);
+  visualViewport?.addEventListener(
+    "resize",
+    updateFooterSlotVisibility,
+  );
+  visualViewport?.addEventListener(
+    "scroll",
+    updateFooterSlotVisibility,
+  );
+  footerQuery.addEventListener(
+    "change",
+    updateFooterSlotVisibility,
+  );
 
   return () => {
-    observer.disconnect();
-    mobileQuery.removeEventListener("change", handleScreenChange);
+    window.removeEventListener(
+      "scroll",
+      updateFooterSlotVisibility,
+    );
+    window.removeEventListener(
+      "resize",
+      updateFooterSlotVisibility,
+    );
+    visualViewport?.removeEventListener(
+      "resize",
+      updateFooterSlotVisibility,
+    );
+    visualViewport?.removeEventListener(
+      "scroll",
+      updateFooterSlotVisibility,
+    );
+    footerQuery.removeEventListener(
+      "change",
+      updateFooterSlotVisibility,
+    );
   };
 }, []);
   useEffect(() => {
