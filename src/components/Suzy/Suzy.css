@@ -570,7 +570,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .footer__suzy-slot {
+}
+
+.footer__suzy-slot {
   --suzy-primary: #c38a77;
   --suzy-primary-soft: #e9b6a5;
   --suzy-brown: #59352d;
@@ -584,5 +586,4 @@
     margin: 0 auto;
     font: inherit;
   }
-}
 }
