@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suzanacarv.com.br/sitemap.xml
