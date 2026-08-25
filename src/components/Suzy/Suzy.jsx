@@ -47,7 +47,7 @@ const [isFooterSlotVisible, setIsFooterSlotVisible] = useState(false);
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
   const messageIdRef = useRef(1);
-
+const isFooterDockedRef = useRef(false);
   const createMessage = (sender, text, extra = {}) => {
     messageIdRef.current += 1;
 
@@ -111,29 +111,44 @@ useEffect(() => {
   setFooterSlot(slot);
 
   const updateFooterSlotVisibility = () => {
-    const slotRect = slot.getBoundingClientRect();
-    const viewportTop = visualViewport?.offsetTop ?? 0;
-    const viewportHeight =
-      visualViewport?.height ?? window.innerHeight;
-    const viewportBottom = viewportTop + viewportHeight;
+  const slotRect = slot.getBoundingClientRect();
+  const viewportHeight =
+    visualViewport?.height ?? window.innerHeight;
 
-    const visibleTop = Math.max(slotRect.top, viewportTop);
-    const visibleBottom = Math.min(slotRect.bottom, viewportBottom);
-    const visibleHeight = Math.max(
-      0,
-      visibleBottom - visibleTop,
-    );
+  const visibleTop = Math.max(slotRect.top, 0);
+  const visibleBottom = Math.min(
+    slotRect.bottom,
+    viewportHeight,
+  );
+  const visibleHeight = Math.max(
+    0,
+    visibleBottom - visibleTop,
+  );
 
-    const minimumVisibleHeight = Math.min(
-      slotRect.height * 0.5,
-      44,
-    );
+  if (!footerQuery.matches) {
+    isFooterDockedRef.current = false;
+    setIsFooterSlotVisible(false);
+    return;
+  }
 
-    setIsFooterSlotVisible(
-      footerQuery.matches &&
-        visibleHeight >= minimumVisibleHeight,
-    );
-  };
+  const enterThreshold = Math.min(
+    slotRect.height * 0.7,
+    64,
+  );
+  const exitThreshold = Math.min(
+    slotRect.height * 0.45,
+    40,
+  );
+
+  const shouldDock = isFooterDockedRef.current
+    ? visibleHeight >= exitThreshold
+    : visibleHeight >= enterThreshold;
+
+  if (shouldDock !== isFooterDockedRef.current) {
+    isFooterDockedRef.current = shouldDock;
+    setIsFooterSlotVisible(shouldDock);
+  }
+};
 
   updateFooterSlotVisibility();
 
