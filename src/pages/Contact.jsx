@@ -12,7 +12,9 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+import FormContato from "@/components/FormContato/FormContato";
 import "./Contact.css";
+import SEO from "@/components/SEO/SEO";
 
 const contactChannels = [
   {
@@ -101,8 +103,15 @@ function Contact() {
   };
 
   return (
-    <main className="contact-page">
-      <section className="contact-hero">
+    <>
+      <SEO
+        title="Contato - Suzana Carv | Agende seu Procedimento"
+        description="Entre em contato com Suzana Carv. Tire suas dúvidas, conheça os procedimentos e agende seu horário. WhatsApp, Instagram, formulário de contato."
+        url="/contato"
+        keywords="contato Suzana Carv, agendar procedimento, WhatsApp, formulário de contato"
+      />
+      <main className="contact-page">
+        <section className="contact-hero">
         <div className="contact-hero__container">
           <div className="contact-hero__content">
             <span className="contact-hero__badge">Entre em contato</span>
@@ -241,6 +250,8 @@ function Contact() {
           </div>
         </div>
       </section>
+
+      <FormContato />
 
       <section
         className="contact-information contact-reveal"
@@ -392,7 +403,8 @@ function Contact() {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 

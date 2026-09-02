@@ -27,13 +27,13 @@ function About() {
           <span className="about__badge">Conheça a profissional</span>
 
           <h2 className="about__title">
-            Mais de <span>3 anos</span> valorizando a beleza natural.
+            Mais de <span>3 anos</span> realçando a beleza natural.
           </h2>
 
           <p className="about__description">
-            Meu propósito é realçar a beleza natural de cada cliente através de
-            técnicas personalizadas, atendimento humanizado e um ambiente
-            preparado para proporcionar conforto, confiança e autoestima.
+            Meu propósito é valorizar a beleza natural de cada cliente com
+            técnicas personalizadas, atendimento humanizado e um ambiente que
+            transmite conforto, confiança e autoestima.
           </p>
 
           <div className="about__highlights">

@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa6";
 
 import "./Testimonials.css";
+import SEO from "@/components/SEO/SEO";
 
 const videoTestimonials = [
   {
@@ -139,6 +140,12 @@ const secondaryVideos = videoTestimonials.filter(
 
   return (
     <>
+      <SEO
+        title="Depoimentos - Suzana Carv | Experiências de Clientes"
+        description="Ouça histórias reais de clientes satisfeitas com os procedimentos de design de sobrancelhas. Vídeos, avaliações 5 estrelas e transformações comprovadas."
+        url="/depoimentos"
+        keywords="depoimentos, avaliações, experiências cliente, comentários, design de sobrancelhas"
+      />
       <main className="testimonials-page">
         <section className="testimonials-hero">
           <div className="testimonials-hero__container">
@@ -149,7 +156,7 @@ const secondaryVideos = videoTestimonials.filter(
 
               <h1 className="testimonials-hero__title">
                 A confiança das clientes é o nosso
-                <span> maior resultado</span>
+                <span> maior diferencial</span>
               </h1>
 
               <p className="testimonials-hero__description">
@@ -255,13 +262,13 @@ const secondaryVideos = videoTestimonials.filter(
     id="testimonials-videos-title"
   >
     Cada depoimento representa uma história de confiança,
-    cuidado e transformação
+    cuidado e transformação real
   </h2>
 
   <p className="testimonials-section__description">
     Conheça relatos de clientes que confiaram no trabalho da
     Suzana Carv e descobriram como um atendimento personalizado
-    pode valorizar ainda mais sua beleza natural.
+    pode valorizar ainda mais a sua beleza natural.
   </p>
 </header>
 
@@ -369,21 +376,21 @@ const secondaryVideos = videoTestimonials.filter(
     </span>
 
     <h2
-  className="testimonials-impact__title"
-  id="testimonials-impact-title"
->
-  <span className="testimonials-impact__title-intro">
-    Mais de
-  </span>
+      className="testimonials-impact__title"
+      id="testimonials-impact-title"
+    >
+      <span className="testimonials-impact__title-intro">
+        Mais de
+      </span>
 
-  <strong className="testimonials-impact__number">
-    1.000
-  </strong>
+      <strong className="testimonials-impact__number">
+        1.000
+      </strong>
 
-  <span className="testimonials-impact__title-main">
-    mulheres já confiaram na Suzana Carv.
-  </span>
-</h2>
+      <span className="testimonials-impact__title-main">
+        mulheres já confiaram na Suzana Carv.
+      </span>
+    </h2>
 
     <p className="testimonials-impact__description">
       Cada história representa uma experiência única, conduzida com escuta,

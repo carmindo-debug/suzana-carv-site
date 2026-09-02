@@ -12,12 +12,12 @@ function Results() {
         <div className="results__content">
           <span className="results__badge">Técnica exclusiva</span>
 
-          <h2 className="results__title">A técnica Carv Brows em ação</h2>
+          <h2 className="results__title">A técnica Carv Brows em destaque</h2>
 
           <p className="results__description">
-            Veja uma experiência real e descubra como a técnica exclusiva Carv
-            Brows valoriza a beleza natural, proporcionando sobrancelhas mais
-            harmônicas e um resultado elegante.
+            Veja um resultado real e descubra como a técnica exclusiva Carv Brows
+            valoriza a beleza natural, criando sobrancelhas mais harmoniosas,
+            elegantes e cheias de personalidade.
           </p>
 
           <div className="results__buttons">

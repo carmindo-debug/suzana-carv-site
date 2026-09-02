@@ -4,7 +4,6 @@ import {
   FaArrowLeft,
   FaArrowRight,
   FaInstagram,
-  FaMaximize,
   FaWhatsapp,
   FaXmark,
 } from "react-icons/fa6";
@@ -22,6 +21,7 @@ import portfolio09 from "../assets/portfolio/portfolio-09.png";
 import portfolio10 from "../assets/portfolio/portfolio-10.png";
 import Stats from "@/components/Stats/Stats";
 import "./Portfolio.css";
+import SEO from "@/components/SEO/SEO";
 import profissional01 from "@/assets/images/portfolio/profissional-01.jpeg";
 /* ========================================
    ANTES E DEPOIS — CAPAS
@@ -225,44 +225,13 @@ const beforeAfterItems = [
 ];
 const SWIPE_THRESHOLD = 55;
 
-const filters = [
-  {
-    id: "all",
-    label: "Todos",
-  },
-  {
-    id: "design",
-    label: "Design",
-  },
-  // {
-  //   id: "henna",
-  //   label: "Henna",
-  // },
-  {
-    id: "lamination",
-    label: "Brow Lamination",
-  },
-  {
-    id: "reconstrucao",
-    label: "Reconstrução",
-  },
-];
-
 function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
   const [isImageChanging, setIsImageChanging] = useState(false);
-  const galleryRef = useRef(null);
   const touchStartXRef = useRef(null);
   const closeButtonRef = useRef(null);
   const [selectedTransformation, setSelectedTransformation] = useState(null);
-  const filteredItems = useMemo(() => {
-    if (activeFilter === "all") {
-      return portfolioItems;
-    }
-
-    return portfolioItems.filter((item) => item.category === activeFilter);
-  }, [activeFilter]);
+  const filteredItems = useMemo(() => portfolioItems, []);
 
   const openTransformationModal = (item) => {
     setSelectedTransformation(item);
@@ -327,11 +296,6 @@ function Portfolio() {
   const selectedItemIndex = selectedItem
     ? filteredItems.findIndex((item) => item.id === selectedItem.id)
     : -1;
-
-  const openModal = (item) => {
-    setSelectedItem(item);
-    setIsImageChanging(false);
-  };
 
   const closeModal = useCallback(() => {
     setSelectedItem(null);
@@ -434,10 +398,6 @@ function Portfolio() {
     };
   }, [selectedItem, closeModal, showPreviousItem, showNextItem]);
 
-  const handleFilterChange = (filterId) => {
-    setActiveFilter(filterId);
-    setSelectedItem(null);
-  };
   const handleTouchStart = (event) => {
     touchStartXRef.current = event.touches[0]?.clientX ?? null;
   };
@@ -469,6 +429,12 @@ function Portfolio() {
 
   return (
     <>
+      <SEO
+        title="Portfólio - Suzana Carv | Antes e Depois, Transformações"
+        description="Veja o portfólio completo com antes e depois dos procedimentos de design de sobrancelhas. Transformações reais, técnicas profissionais, resultados incríveis."
+        url="/portfolio"
+        keywords="portfólio sobrancelhas, antes e depois, design de sobrancelhas, resultados reais"
+      />
       <main className="portfolio-page">
         <section className="portfolio-hero">
           <div className="portfolio-hero__container">
@@ -478,7 +444,7 @@ function Portfolio() {
               </span>
 
               <h1 className="portfolio-hero__title">
-                Resultados que preservam a <span>essência de cada olhar.</span>
+                Resultados que respeitam a <span>essência de cada olhar.</span>
               </h1>
 
               <p className="portfolio-hero__description">
@@ -626,7 +592,7 @@ function Portfolio() {
                 className="portfolio-transformations__title"
                 id="portfolio-transformations-title"
               >
-                Transformações reais, preservando o que{" "}
+                Transformações reais que celebram o que{" "}
                 <span>cada olhar tem de único.</span>
               </h2>
 

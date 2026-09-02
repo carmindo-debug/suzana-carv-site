@@ -66,7 +66,7 @@ export default async function handler(request, response) {
     });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = globalThis.process?.env?.GEMINI_API_KEY;
 
   if (!apiKey) {
     return response.status(500).json({

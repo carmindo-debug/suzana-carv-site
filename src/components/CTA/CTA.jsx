@@ -9,13 +9,14 @@ function CTA() {
       <div className="cta__container">
         <span className="cta__badge">Seu momento começa aqui</span>
 
-        <h2 className="cta__title">Pronta para <span>transformar seu olhar?</span>
+        <h2 className="cta__title">
+          Pronta para <span>realçar seu olhar?</span>
         </h2>
 
         <p className="cta__description">
           Agende seu atendimento e viva uma experiência exclusiva, com técnicas
           personalizadas, conforto e resultados naturais que valorizam sua
-          beleza.
+          beleza de forma delicada e harmoniosa.
         </p>
 
         <a

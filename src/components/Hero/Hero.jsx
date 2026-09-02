@@ -9,10 +9,14 @@ function Hero() {
         {/* Conteúdo */}
         <div className="hero__content">
           <h1 className="hero__title">
-            Sobrancelhas naturais que <span>valorizam sua beleza.</span>
+            Sobrancelhas naturais <span>valorizam sua beleza.</span>
           </h1>
 
-          <p className="hero__description">Realce sua expressão com um design personalizado, técnicas exclusivas e atendimento em um ambiente preparado para oferecer conforto, elegância e resultados naturais.</p>
+          <p className="hero__description">
+            Realce sua expressão com um design personalizado, técnicas exclusivas e
+            atendimento em um ambiente preparado para oferecer conforto, elegância e
+            resultados naturais.
+          </p>
 
           <div className="hero__buttons">
             <a

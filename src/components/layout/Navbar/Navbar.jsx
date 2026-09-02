@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
@@ -11,8 +11,6 @@ import logo from "@/assets/images/logo/suzana-carv-logo.svg";
 import "./Navbar.css";
 
 function Navbar() {
-  const location = useLocation();
-
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,11 +25,6 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  /* Fecha o menu quando mudar de página */
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
 
   /* Fecha o menu ao apertar ESC */
   useEffect(() => {

@@ -26,8 +26,8 @@ function Contact() {
           </h2>
 
           <p className="contact__description">
-            Será um prazer receber você na Sala de Sobrancelhas.
-            Entre em contato, tire suas dúvidas e agende seu horário.
+            Será um prazer receber você em um atendimento pensado para seu
+            conforto, suas necessidades e seu estilo.
           </p>
 
           <div className="contact__info">

@@ -854,6 +854,190 @@ max-width:320px;
 }
 
 /* ========================================
+   METADATA (DURAÇÃO E PREÇO)
+======================================== */
+
+.procedure__metadata {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 2px solid rgba(195, 138, 119, 0.15);
+  border-bottom: 2px solid rgba(195, 138, 119, 0.15);
+}
+
+.procedure__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.procedure__meta-item strong {
+  color: #59352d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.procedure__meta-item span {
+  color: #c38a77;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   IDEAL FOR
+======================================== */
+
+.procedure__ideal {
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: rgba(195, 138, 119, 0.08);
+  border-left: 4px solid #c38a77;
+  border-radius: 0.5rem;
+}
+
+.procedure__ideal-label {
+  margin: 0 0 0.5rem;
+  color: #59352d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.procedure__ideal-text {
+  margin: 0;
+  color: #6f625e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   DETALHES (O QUE ESTÁ INCLUÍDO)
+======================================== */
+
+.procedure__details {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(195, 138, 119, 0.15);
+}
+
+.procedure__details-title {
+  margin: 0 0 1rem;
+  color: #59352d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.procedure__details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.procedure__details-list li {
+  color: #6f625e;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding-left: 0;
+}
+
+.procedure__details-list li::before {
+  content: "✓ ";
+  color: #c38a77;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+/* ========================================
+   RESPONSIVE - PROCEDIMENTOS
+======================================== */
+
+@media (max-width: 1024px) {
+  .procedure {
+    gap: 48px;
+    padding: 32px;
+  }
+
+  .procedure__image-wrapper {
+    min-height: 400px;
+  }
+
+  .procedure__image {
+    height: 400px;
+  }
+
+  .procedure__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-procedures {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-procedures__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .services-procedures__title {
+    font-size: 1.8rem;
+  }
+
+  .procedure {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .procedure--reverse .procedure__image-wrapper {
+    order: 1;
+  }
+
+  .procedure--reverse .procedure__content {
+    order: 2;
+  }
+
+  .procedure__image-wrapper {
+    min-height: 300px;
+  }
+
+  .procedure__image {
+    height: 300px;
+  }
+
+  .procedure__image-background {
+    width: 90%;
+    height: 90%;
+  }
+
+  .procedure__title {
+    font-size: 1.5rem;
+  }
+
+  .procedure__description {
+    font-size: 0.95rem;
+  }
+
+  .procedure__metadata {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.procedure__button:hover .procedure__button-arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================
    RESPONSIVIDADE
 ======================================== */
 
@@ -962,3 +1146,167 @@ max-width:320px;
   }
 }
 
+
+/* ========================================
+   FAQ - PERGUNTAS FREQUENTES
+======================================== */
+
+.services-faq {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f6efec 100%);
+}
+
+.services-faq__container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.services-faq__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.services-faq__badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(195, 138, 119, 0.14);
+  color: #c38a77;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.services-faq__title {
+  margin: 0 0 1rem;
+  color: #1a1a1a;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.services-faq__description {
+  margin: 0;
+  color: #6f625e;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.services-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.services-faq__item {
+  border: 2px solid rgba(195, 138, 119, 0.15);
+  border-radius: 0.75rem;
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-faq__item:hover {
+  border-color: rgba(195, 138, 119, 0.3);
+  box-shadow: 0 8px 20px rgba(89, 53, 45, 0.08);
+}
+
+.services-faq__item:focus-within {
+  outline: 2px solid #c38a77;
+}
+
+.services-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.services-faq__question h3 {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.services-faq__icon {
+  flex-shrink: 0;
+  color: #c38a77;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.services-faq__icon--open {
+  transform: rotate(180deg);
+}
+
+.services-faq__answer {
+  padding: 0 1.5rem 1.5rem;
+  color: #6f625e;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  border-top: 1px solid rgba(195, 138, 119, 0.15);
+  animation: slideDown 0.3s ease-out;
+}
+
+.services-faq__cta {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(195, 138, 119, 0.08);
+  border-radius: 1rem;
+  border: 2px solid rgba(195, 138, 119, 0.15);
+}
+
+.services-faq__cta p {
+  margin: 0 0 1rem;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.services-faq__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.8rem;
+  background: #c38a77;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-faq__button:hover {
+  background: #b37466;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(195, 138, 119, 0.3);
+}
+
+@media (max-width: 768px) {
+  .services-faq {
+    padding: 3rem 1rem;
+  }
+
+  .services-faq__title {
+    font-size: 1.75rem;
+  }
+
+  .services-faq__question {
+    padding: 1.25rem;
+  }
+
+  .services-faq__answer {
+    padding: 0 1.25rem 1.25rem;
+  }
+}

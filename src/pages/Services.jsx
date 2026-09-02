@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Services.css";
-import { FaWhatsapp, FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { FaWhatsapp, FaArrowRight, FaCircleCheck, FaChevronDown } from "react-icons/fa6";
+import SEO from "@/components/SEO/SEO";
 
 import designSobrancelhas from "@/assets/images/services/design-sobrancelhas.jpeg";
 import browLamination from "@/assets/images/services/brow-lamination.jpeg";
@@ -12,6 +13,7 @@ import ServicesCTA from "@/components/CTA/ServicesCTA";
 function Services() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState(null);
 
   const carouselImages = [
     {
@@ -48,6 +50,15 @@ function Services() {
         "Harmonia facial",
         "Resultado natural",
       ],
+      duration: "45-60 minutos",
+      price: "A consultar",
+      details: [
+        "Design personalizado conforme formato do rosto",
+        "Análise de simetria e proporção",
+        "Orientação sobre cuidados pós-procedimento",
+        "Resultado imediato",
+      ],
+      ideal_for: "Quem deseja definir e modelar as sobrancelhas com naturalidade",
     },
     {
       id: "brow-lamination",
@@ -60,6 +71,15 @@ function Services() {
         "Efeito visual de preenchimento",
         "Acabamento moderno",
       ],
+      duration: "60-90 minutos",
+      price: "A consultar",
+      details: [
+        "Uso de produtos de qualidade premium",
+        "Mantém o alinhamento por 6-8 semanas",
+        "Compatível com todos os tipos de fio",
+        "Pode ser combinado com coloração",
+      ],
+      ideal_for: "Quem deseja sobrancelhas mais volumosas e bem-definidas",
     },
     {
       id: "carv-brows-hydragloss-labial",
@@ -72,6 +92,15 @@ function Services() {
         "Realce da beleza natural",
         "Experiência personalizada",
       ],
+      duration: "90-120 minutos",
+      price: "A consultar",
+      details: [
+        "Procedimento exclusivo e completo",
+        "Combinação estratégica de técnicas",
+        "Resultado harmonioso face-lábios",
+        "Efeito glossy nos lábios",
+      ],
+      ideal_for: "Quem busca uma experiência de beleza completa e personalizada",
     },
     {
       id: "descoloracao-de-sobrancelhas",
@@ -84,6 +113,15 @@ function Services() {
         "Resultado personalizado",
         "Visual moderno",
       ],
+      duration: "30-45 minutos",
+      price: "A consultar",
+      details: [
+        "Processo controlado e seguro",
+        "Adequado para qualquer tom de fio",
+        "Resultados personalizados",
+        "Cuidado especial com a sensibilidade da pele",
+      ],
+      ideal_for: "Quem deseja sobrancelhas mais claras ou compatível com coloração de cabelo",
     },
     {
       id: "design-com-coloracao",
@@ -96,6 +134,15 @@ function Services() {
         "Coloração personalizada",
         "Acabamento profissional",
       ],
+      duration: "60-90 minutos",
+      price: "A consultar",
+      details: [
+        "Design personalizado + coloração",
+        "Cores adaptadas ao tom de pele",
+        "Efeito duradouro de 6-8 semanas",
+        "Ótimo para cobertura de falhas",
+      ],
+      ideal_for: "Quem quer definição, cor e cobertura em um único procedimento",
     },
   ];
 
@@ -121,23 +168,29 @@ function Services() {
 
   return (
     <>
+      <SEO
+        title="Serviços de Sobrancelhas - Suzana Carv | Design, Brow Lamination"
+        description="Conheça nossos 5 serviços: Design de Sobrancelhas, Brow Lamination, Carv Brows + Hydragloss, Descoloração e Design com Coloração. Técnicas profissionais personalizadas."
+        url="/servicos"
+        keywords="design de sobrancelhas, brow lamination, descoloração, coloração, sobrancelhas"
+      />
       <section className="services-hero">
         <div className="services-hero__container">
           {/* Conteúdo */}
 
           <div className="services-hero__content">
             <span className="services-hero__badge">
-              Procedimentos Exclusivos
+              Procedimentos exclusivos
             </span>
 
             <h1 className="services-hero__title">
-              Técnicas desenvolvidas para valorizar sua beleza com naturalidade.
+              Técnicas pensadas para realçar sua beleza natural.
             </h1>
 
             <p className="services-hero__description">
-              Cada procedimento é realizado de forma personalizada, respeitando
-              o formato do seu rosto, sua personalidade e o resultado que você
-              deseja alcançar.
+              Cada atendimento é personalizado para respeitar o formato do seu
+              rosto, sua expressão e o resultado que você deseja alcançar com
+              naturalidade e sofisticação.
             </p>
 
             <div className="services-hero__buttons">
@@ -237,12 +290,13 @@ function Services() {
               className="services-procedures__title"
               id="services-procedures-title"
             >
-              Escolha o procedimento ideal para você
+              Escolha a técnica ideal para você
             </h2>
 
             <p className="services-procedures__description">
-              Cada técnica é realizada com atenção aos detalhes, respeitando
-              suas características e valorizando sua beleza natural.
+              Cada procedimento é realizado com atenção aos detalhes, respeitando
+              suas características e realçando sua beleza de forma natural e
+              harmoniosa.
             </p>
           </header>
 
@@ -277,14 +331,39 @@ function Services() {
                     {procedure.description}
                   </p>
 
+                  <div className="procedure__metadata">
+                    <div className="procedure__meta-item">
+                      <strong>⏱️ Duração:</strong>
+                      <span>{procedure.duration}</span>
+                    </div>
+                    <div className="procedure__meta-item">
+                      <strong>💳 Valor:</strong>
+                      <span>{procedure.price}</span>
+                    </div>
+                  </div>
+
+                  <div className="procedure__ideal">
+                    <p className="procedure__ideal-label">👤 Ideal para:</p>
+                    <p className="procedure__ideal-text">{procedure.ideal_for}</p>
+                  </div>
+
                   <ul className="procedure__benefits">
                     {procedure.benefits.map((benefit) => (
                       <li className="procedure__benefit" key={benefit}>
-                        <FaCheckCircle aria-hidden="true" />
+                        <FaCircleCheck aria-hidden="true" />
                         <span>{benefit}</span>
                       </li>
                     ))}
                   </ul>
+
+                  <div className="procedure__details">
+                    <h4 className="procedure__details-title">O que está incluído:</h4>
+                    <ul className="procedure__details-list">
+                      {procedure.details.map((detail) => (
+                        <li key={detail}>✓ {detail}</li>
+                      ))}
+                    </ul>
+                  </div>
 
                   <a
                     href="https://wa.me/5521993471144?text=Olá! Vim pelo site da Suzana Carv e gostaria de agendar meu horário."
@@ -310,6 +389,94 @@ function Services() {
           </div>
         </div>
       </section>
+
+      {/* FAQ SECTION */}
+      <section className="services-faq">
+        <div className="services-faq__container">
+          <header className="services-faq__header">
+            <span className="services-faq__badge">Dúvidas frequentes</span>
+            <h2 className="services-faq__title">Perguntas que recebemos com frequência</h2>
+            <p className="services-faq__description">
+              Confira as respostas às dúvidas mais comuns sobre nossos procedimentos
+            </p>
+          </header>
+
+          <div className="services-faq__list">
+            {[
+              {
+                id: 1,
+                question: "Qual é a duração dos procedimentos?",
+                answer: "A duração varia conforme o serviço escolhido. O Design de Sobrancelhas leva em média 45 a 60 minutos, o Brow Lamination fica entre 60 e 90 minutos e procedimentos combinados podem durar até 120 minutos.",
+              },
+              {
+                id: 2,
+                question: "Quanto tempo duram os resultados?",
+                answer: "Depende do procedimento. Design e coloração costumam durar entre 6 e 8 semanas, enquanto o Brow Lamination mantém o alinhamento do fio por cerca de 6 a 8 semanas. O resultado do design imediato também pode ser ajustado conforme a evolução do crescimento dos fios.",
+              },
+              {
+                id: 3,
+                question: "Quais são os cuidados após o procedimento?",
+                answer: "Recomendamos evitar água nos primeiros 24 horas, não usar maquiagem ou produtos químicos por 48 horas, evitar luz solar direta nos primeiros dias e seguir as orientações específicas da sua avaliação. O cuidado ideal será explicado no atendimento.",
+              },
+              {
+                id: 4,
+                question: "Qual procedimento é ideal para mim?",
+                answer: "Tudo depende do seu objetivo. Se você busca definição, o Design de Sobrancelhas é ideal; para mais volume e alinhamento dos fios, o Brow Lamination é excelente; e para cobertura de falhas com acabamento personalizado, o Design com Coloração funciona muito bem.",
+              },
+              {
+                id: 5,
+                question: "Há alguma restrição de idade ou tipo de pele?",
+                answer: "Os procedimentos são adaptados para diferentes tipos de pele e estruturas de fio. Em geral, podem ser realizados por maiores de 18 anos, com atenção para gestantes e pessoas com condições específicas. O ideal é informar qualquer sensibilidade ou alergia no atendimento.",
+              },
+              {
+                id: 6,
+                question: "Como faço para agendar?",
+                answer: "É simples: você pode clicar em qualquer botão de agendamento, enviar mensagem pelo WhatsApp ou preencher o formulário de contato para tirar dúvidas antes da sua visita.",
+              },
+            ].map((faq) => (
+              <div
+                key={faq.id}
+                className="services-faq__item"
+                onClick={() => setExpandedFaq(expandedFaq === faq.id ? null : faq.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setExpandedFaq(expandedFaq === faq.id ? null : faq.id);
+                  }
+                }}
+              >
+                <div className="services-faq__question">
+                  <h3>{faq.question}</h3>
+                  <FaChevronDown
+                    className={`services-faq__icon ${
+                      expandedFaq === faq.id ? "services-faq__icon--open" : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                </div>
+                {expandedFaq === faq.id && (
+                  <div className="services-faq__answer">{faq.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="services-faq__cta">
+            <p>Ainda tem dúvidas?</p>
+            <a
+              href="https://wa.me/5521993471144?text=Olá! Tenho dúvidas sobre os procedimentos da Suzana Carv."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="services-faq__button"
+            >
+              <FaWhatsapp />
+              Conversar via WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
       <ServicesCTA />
     </>
   );

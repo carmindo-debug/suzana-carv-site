@@ -39,15 +39,18 @@ function Suzy() {
     procedure: "",
   });
   const [viewportMetrics, setViewportMetrics] = useState({
-  offsetTop: 0,
-  height: null,
-});
-const [footerSlot, setFooterSlot] = useState(null);
-const [isFooterSlotVisible, setIsFooterSlotVisible] = useState(false);
+    offsetTop: 0,
+    height: null,
+  });
+  const [isFooterSlotVisible, setIsFooterSlotVisible] = useState(false);
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
   const messageIdRef = useRef(1);
-const isFooterDockedRef = useRef(false);
+  const isFooterDockedRef = useRef(false);
+  const footerTarget =
+    typeof document !== "undefined"
+      ? document.getElementById("suzy-footer-slot")
+      : null;
   const createMessage = (sender, text, extra = {}) => {
     messageIdRef.current += 1;
 
@@ -108,90 +111,49 @@ useEffect(() => {
     return undefined;
   }
 
-  setFooterSlot(slot);
-
   const updateFooterSlotVisibility = () => {
-  const slotRect = slot.getBoundingClientRect();
-  const viewportHeight =
-    visualViewport?.height ?? window.innerHeight;
+    const slotRect = slot.getBoundingClientRect();
+    const viewportHeight = visualViewport?.height ?? window.innerHeight;
 
-  const visibleTop = Math.max(slotRect.top, 0);
-  const visibleBottom = Math.min(
-    slotRect.bottom,
-    viewportHeight,
-  );
-  const visibleHeight = Math.max(
-    0,
-    visibleBottom - visibleTop,
-  );
+    const visibleTop = Math.max(slotRect.top, 0);
+    const visibleBottom = Math.min(slotRect.bottom, viewportHeight);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
 
-  if (!footerQuery.matches) {
-    isFooterDockedRef.current = false;
-    setIsFooterSlotVisible(false);
-    return;
-  }
+    if (!footerQuery.matches) {
+      isFooterDockedRef.current = false;
+      setIsFooterSlotVisible(false);
+      return;
+    }
 
-  const enterThreshold = Math.min(
-    slotRect.height * 0.7,
-    64,
-  );
-  const exitThreshold = Math.min(
-    slotRect.height * 0.45,
-    40,
-  );
+    const enterThreshold = Math.min(slotRect.height * 0.7, 64);
+    const exitThreshold = Math.min(slotRect.height * 0.45, 40);
 
-  const shouldDock = isFooterDockedRef.current
-    ? visibleHeight >= exitThreshold
-    : visibleHeight >= enterThreshold;
+    const shouldDock = isFooterDockedRef.current
+      ? visibleHeight >= exitThreshold
+      : visibleHeight >= enterThreshold;
 
-  if (shouldDock !== isFooterDockedRef.current) {
-    isFooterDockedRef.current = shouldDock;
-    setIsFooterSlotVisible(shouldDock);
-  }
-};
+    if (shouldDock !== isFooterDockedRef.current) {
+      isFooterDockedRef.current = shouldDock;
+      setIsFooterSlotVisible(shouldDock);
+    }
+  };
 
   updateFooterSlotVisibility();
 
-  window.addEventListener(
-    "scroll",
-    updateFooterSlotVisibility,
-    { passive: true },
-  );
+  window.addEventListener("scroll", updateFooterSlotVisibility, {
+    passive: true,
+  });
   window.addEventListener("resize", updateFooterSlotVisibility);
-  visualViewport?.addEventListener(
-    "resize",
-    updateFooterSlotVisibility,
-  );
-  visualViewport?.addEventListener(
-    "scroll",
-    updateFooterSlotVisibility,
-  );
-  footerQuery.addEventListener(
-    "change",
-    updateFooterSlotVisibility,
-  );
+  visualViewport?.addEventListener("resize", updateFooterSlotVisibility);
+  visualViewport?.addEventListener("scroll", updateFooterSlotVisibility);
+  footerQuery.addEventListener("change", updateFooterSlotVisibility);
 
   return () => {
-    window.removeEventListener(
-      "scroll",
-      updateFooterSlotVisibility,
-    );
-    window.removeEventListener(
-      "resize",
-      updateFooterSlotVisibility,
-    );
-    visualViewport?.removeEventListener(
-      "resize",
-      updateFooterSlotVisibility,
-    );
-    visualViewport?.removeEventListener(
-      "scroll",
-      updateFooterSlotVisibility,
-    );
-    footerQuery.removeEventListener(
-      "change",
-      updateFooterSlotVisibility,
-    );
+    window.removeEventListener("scroll", updateFooterSlotVisibility);
+    window.removeEventListener("resize", updateFooterSlotVisibility);
+    visualViewport?.removeEventListener("resize", updateFooterSlotVisibility);
+    visualViewport?.removeEventListener("scroll", updateFooterSlotVisibility);
+    footerQuery.removeEventListener("change", updateFooterSlotVisibility);
   };
 }, []);
   useEffect(() => {
@@ -594,9 +556,9 @@ const renderLauncher = () => (
       )}
 
       {!isOpen &&
-  (isFooterSlotVisible && footerSlot
-    ? createPortal(renderLauncher(), footerSlot)
-    : renderLauncher())}
+        (isFooterSlotVisible && footerTarget
+          ? createPortal(renderLauncher(), footerTarget)
+          : renderLauncher())}
     </div>
   );
 }
