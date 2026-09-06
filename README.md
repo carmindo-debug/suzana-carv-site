@@ -1,16 +1,71 @@
-# React + Vite
+# Suzana Carv — Site Institucional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Suzana Carv Website](https://via.placeholder.com/1200x600)
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Site institucional desenvolvido para a marca **Suzana Carv**, especializada em design de sobrancelhas.
 
-## React Compiler
+O projeto foi criado com foco em uma experiência digital profissional, apresentando os serviços da marca, portfólio de trabalhos e canais de contato para clientes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A aplicação foi desenvolvida utilizando React, com arquitetura organizada em componentes, páginas, rotas e estilos separados.
 
-## Expanding the ESLint configuration
+## Objetivos do projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Criar uma presença digital profissional para a marca;
+- Apresentar serviços e trabalhos realizados;
+- Melhorar a experiência do usuário;
+- Desenvolver uma interface responsiva para diferentes dispositivos.
+
+## Tecnologias utilizadas
+
+### Front-end
+
+- React
+- JavaScript
+- Vite
+- Bootstrap
+- CSS3
+- React Router DOM
+
+### Bibliotecas
+
+- Framer Motion
+- React Icons
+- Swiper
+- React Helmet Async
+
+### Design e ferramentas
+
+- Figma
+- UI/UX Design
+- Git
+- GitHub
+- VS Code
+- Vercel
+
+## Funcionalidades
+
+✅ Página inicial  
+✅ Apresentação dos serviços  
+✅ Portfólio de trabalhos  
+✅ Depoimentos de clientes  
+✅ Página de contato  
+✅ Integração com WhatsApp  
+✅ Layout responsivo para desktop, tablet e mobile  
+✅ Animações e melhorias de experiência do usuário
+
+## Deploy
+
+Projeto publicado:
+
+https://suzana-carv-site.vercel.app
+
+## Desenvolvido por
+
+**Carmindo da Silva Vasconcelos**
+
+Web Designer & Front-end Developer
+
+GitHub:
+https://github.com/carmindo-debug
