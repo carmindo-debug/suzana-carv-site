@@ -130,7 +130,14 @@
   font-size: 20px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
 
 .about__button {
   display: inline-flex;
@@ -153,6 +160,17 @@ letter-spacing: .3px;
   transition: all 0.3s ease;
 }
 
+.about__button--secondary {
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.about__button--secondary:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
 .about__button:hover {
   transform: translateY(-3px);
 background: var(--color-primary-hover);
@@ -168,7 +186,13 @@ background: var(--color-primary-hover);
   display: inline-flex;
 }
 
-.about__button:hover .about__button-icon {
+.about__button-arrow {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.about__button:hover .about__button-icon,
+.about__button:hover .about__button-arrow {
   transform: translateX(6px);
 }
 
@@ -201,6 +225,10 @@ background: var(--color-primary-hover);
   .about__highlights {
     align-items: flex-start;
   }
+
+  .about__actions {
+    justify-content: center;
+  }
 }
 
 /* MOBILE */
@@ -229,6 +257,11 @@ background: var(--color-primary-hover);
 
   .about__content {
     transform: translateY(0);
+  }
+
+  .about__actions {
+    width: 100%;
+    flex-direction: column;
   }
 
   .about__button {

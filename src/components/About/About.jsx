@@ -1,8 +1,10 @@
 import "./About.css";
+import { Link } from "react-router-dom";
 
 import aboutImage from "@/assets/images/about/suzana-carv.jpeg";
 
 import {
+  FaArrowRight,
   FaWhatsapp,
   FaCheckCircle,
   FaGraduationCap,
@@ -53,7 +55,8 @@ function About() {
             </div>
           </div>
 
-          <a
+          <div className="about__actions">
+            <a
               href="https://wa.me/5521993471144?text=Olá!%20Vim%20pelo%20site%20da%20Suzana%20Carv%20e%20gostaria%20de%20agendar%20meu%20horário."
               target="_blank"
               rel="noopener noreferrer"
@@ -61,12 +64,24 @@ function About() {
             >
               <span className="about__button-icon-wrapper">
                 <span className="about__button-icon">
-                  <FaWhatsapp />
+                  <FaWhatsapp aria-hidden="true" />
                 </span>
               </span>
 
               <span>Agende seu horário</span>
             </a>
+
+            <Link
+              to="/sobre"
+              className="about__button about__button--secondary"
+            >
+              <span>Conheça a história</span>
+
+              <span className="about__button-arrow">
+                <FaArrowRight aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
