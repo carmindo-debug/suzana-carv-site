@@ -1,4 +1,3 @@
-
 import "./CTA.css";
 
 import { FaWhatsapp, FaArrowRight } from "react-icons/fa";

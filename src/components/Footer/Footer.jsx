@@ -22,21 +22,26 @@ const navigationLinks = [
   },
   {
     id: 2,
+    label: "Sobre",
+    path: "/sobre",
+  },
+  {
+    id: 3,
     label: "Serviços",
     path: "/servicos",
   },
   {
-    id: 3,
+    id: 4,
     label: "Portfólio",
     path: "/portfolio",
   },
   {
-    id: 4,
+    id: 5,
     label: "Depoimentos",
     path: "/depoimentos",
   },
   {
-    id: 5,
+    id: 6,
     label: "Contato",
     path: "/contato",
   },

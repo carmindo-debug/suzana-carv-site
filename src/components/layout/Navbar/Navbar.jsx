@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  FaBars,
-  FaTimes,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 
 import logo from "@/assets/images/logo/suzana-carv-logo.svg";
 
@@ -42,29 +38,18 @@ function Navbar() {
   }, []);
 
   const getLinkClass = ({ isActive }) =>
-    `navbar__link ${
-      isActive ? "navbar__link--active" : ""
-    }`;
+    `navbar__link ${isActive ? "navbar__link--active" : ""}`;
 
   return (
-    <header
-      className={`navbar ${
-        scrolled ? "navbar--scrolled" : ""
-      }`}
-    >
+    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__container">
-
         {/* LOGO */}
         <NavLink
           to="/"
           className="navbar__brand"
           aria-label="Suzana Carv - Página inicial"
         >
-          <img
-            src={logo}
-            alt="Suzana Carv"
-            className="navbar__logo"
-          />
+          <img src={logo} alt="Suzana Carv" className="navbar__logo" />
         </NavLink>
 
         {/* BOTÃO MOBILE */}
@@ -75,9 +60,7 @@ function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="navbar-navigation"
           aria-label={
-            menuOpen
-              ? "Fechar menu de navegação"
-              : "Abrir menu de navegação"
+            menuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"
           }
         >
           {menuOpen ? (
@@ -90,16 +73,23 @@ function Navbar() {
         {/* NAVEGAÇÃO */}
         <nav
           id="navbar-navigation"
-          className={`navbar__nav ${
-            menuOpen ? "navbar__nav--open" : ""
-          }`}
+          className={`navbar__nav ${menuOpen ? "navbar__nav--open" : ""}`}
           aria-label="Navegação principal"
         >
-          <NavLink to="/" className={getLinkClass}
-          onClick={() => setMenuOpen(false)}>
+          <NavLink
+            to="/"
+            className={getLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Home
           </NavLink>
-
+          <NavLink
+            to="/sobre"
+            className={getLinkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Sobre
+          </NavLink>
           <NavLink
             to="/servicos"
             className={getLinkClass}
@@ -162,7 +152,6 @@ function Navbar() {
             <span>Agende seu horário</span>
           </a>
         </div>
-
       </div>
     </header>
   );
