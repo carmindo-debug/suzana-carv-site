@@ -64,9 +64,19 @@ suzana_carv_homepage/
 │       └── home.png
 │
 ├── public/
+│   ├── favicon.svg
+│   ├── icons.svg
+│   ├── index.html
+│   ├── robots.txt
+│   └── sitemap.xml
 │
 ├── src/
 │   ├── assets/
+│   │   └── images/
+│   │       └── logo/
+│   │           ├── suzana-carv-logo.png
+│   │           └── suzana-carv-logo.svg
+│   │
 │   ├── components/
 │   ├── layouts/
 │   ├── pages/
@@ -74,54 +84,61 @@ suzana_carv_homepage/
 │   └── styles/
 │
 ├── .gitignore
+├── eslint.config.js
 ├── GUIA_EMAILJS.md
 ├── index.html
 ├── package.json
+├── package-lock.json
 ├── vercel.json
 └── vite.config.js
-🎨 Interface e experiência
+```
+
+## 🎨 Interface e experiência
 
 O projeto utiliza uma identidade visual desenvolvida especificamente para a marca, com atenção especial a:
 
-Hierarquia visual
-Tipografia
-Espaçamento
-Responsividade
-Microinterações
-Call-to-actions
-Apresentação de imagens
-Experiência de navegação
-Conversão de visitantes
-📱 Responsividade
+- Hierarquia visual
+- Tipografia
+- Espaçamento
+- Responsividade
+- Microinterações
+- Call-to-actions
+- Apresentação de imagens
+- Experiência de navegação
+- Conversão de visitantes
+
+## 📱 Responsividade
 
 A interface foi desenvolvida seguindo uma abordagem responsiva, permitindo a utilização do site em diferentes tamanhos de tela:
 
-Desktop
-Notebook
-Tablet
-Smartphone
-🚀 Deploy
+- Desktop
+- Notebook
+- Tablet
+- Smartphone
+
+## 🚀 Deploy
 
 O projeto está hospedado na Vercel e integrado ao repositório GitHub.
 
-O código-fonte está organizado na branch main, permitindo a manutenção e evolução contínua do projeto.
+O código-fonte está organizado na branch `main`, permitindo a manutenção e evolução contínua do projeto.
 
-📚 Objetivo do projeto
+## 📚 Objetivo do projeto
 
 Além de atender às necessidades reais da marca Suzana Carv, este projeto representa uma etapa prática do desenvolvimento das minhas habilidades em:
 
-Desenvolvimento Front-end
-React
-JavaScript
-UI/UX
-Design responsivo
-Git e GitHub
-Deploy
-Organização de projetos
-Estruturação de aplicações web
-👨‍💻 Desenvolvido por
+- Desenvolvimento Front-end
+- React
+- JavaScript
+- UI/UX
+- Design responsivo
+- Git e GitHub
+- Deploy
+- Organização de projetos
+- Estruturação de aplicações web
 
-Carmindo Vasconcelos
+## 👨‍💻 Desenvolvido por
+
+**Carmindo Vasconcelos**
 
 Desenvolvedor Front-end em formação, com foco em desenvolvimento web, React, JavaScript, UI/UX e experiências digitais responsivas.
 
