@@ -2,53 +2,58 @@
 
 ![Suzana Carv — Site Institucional](docs/screenshots/home.png)
 
-Site institucional responsivo desenvolvido para a marca **Suzana Carv**, especializada em design de sobrancelhas.
+Site institucional responsivo desenvolvido em React para a marca **Suzana Carv**, especializada em design de sobrancelhas.
 
-O projeto foi desenvolvido com foco em experiência do usuário, apresentação profissional da marca, responsividade e conversão de visitantes em clientes.
+O projeto foi desenvolvido com foco em **experiência do usuário, apresentação profissional da marca, responsividade e conversão de visitantes em clientes**.
 
-🌐 Projeto online
+## 🌐 Projeto online
 
-O projeto está publicado em produção e integrado à Vercel.
+**Site:** https://suzana-carv-site.vercel.app
 
-Site: https://suzana-carv-site.vercel.app
-
-📌 Sobre o projeto
+## 📌 Sobre o projeto
 
 O site foi desenvolvido para apresentar a marca Suzana Carv no ambiente digital, destacando seus serviços, técnicas, portfólio, depoimentos e canais de contato.
 
-A estrutura foi planejada para proporcionar uma navegação simples, elegante e intuitiva, com foco no público feminino e na conversão através dos canais de atendimento.
+A estrutura foi planejada para proporcionar uma navegação simples, elegante e intuitiva, com foco na apresentação dos serviços e na conversão através dos canais de atendimento.
 
-✨ Principais funcionalidades
-Página inicial institucional
-Apresentação da marca
-Página de serviços
-Portfólio de trabalhos
-Depoimentos de clientes
-Página de contato
-Integração com WhatsApp
-Integração com Instagram
-Formulário de contato
-Assistente virtual
-Layout responsivo para desktop, tablet e dispositivos móveis
-Navegação entre páginas utilizando React Router
-SEO básico e configuração para compartilhamento
-Deploy em produção através da Vercel
-🛠️ Tecnologias utilizadas
-React
-JavaScript
-Vite
-Bootstrap
-React Router
-Framer Motion
-React Icons
-Swiper
-EmailJS
-CSS
-HTML5
-Git
-GitHub
-Vercel
-🧩 Estrutura do projeto
+## ✨ Principais funcionalidades
+
+- Página inicial institucional
+- Apresentação da marca
+- Página de serviços
+- Portfólio de trabalhos
+- Depoimentos de clientes
+- Página de contato
+- Integração com WhatsApp
+- Integração com Instagram
+- Formulário de contato
+- Assistente virtual
+- Layout responsivo
+- Navegação entre páginas com React Router
+- SEO básico
+- Configuração para compartilhamento
+- Deploy em produção através da Vercel
+
+## 🛠️ Tecnologias utilizadas
+
+- React
+- JavaScript
+- Vite
+- Bootstrap
+- React Router
+- Framer Motion
+- React Icons
+- Swiper
+- EmailJS
+- CSS
+- HTML5
+- Git
+- GitHub
+- Vercel
+
+## 🧩 Estrutura do projeto
+
+```text
 suzana_carv_homepage/
 │
 ├── api/
@@ -76,7 +81,7 @@ suzana_carv_homepage/
 └── vite.config.js
 🎨 Interface e experiência
 
-O projeto utiliza uma identidade visual desenvolvida especificamente para a marca, com foco em:
+O projeto utiliza uma identidade visual desenvolvida especificamente para a marca, com atenção especial a:
 
 Hierarquia visual
 Tipografia
@@ -97,14 +102,13 @@ Tablet
 Smartphone
 🚀 Deploy
 
-O projeto está hospedado na Vercel e configurado para integração com o repositório GitHub.
+O projeto está hospedado na Vercel e integrado ao repositório GitHub.
 
-A branch principal utilizada no projeto é:
+O código-fonte está organizado na branch main, permitindo a manutenção e evolução contínua do projeto.
 
-main
 📚 Objetivo do projeto
 
-Além de atender às necessidades reais da marca Suzana Carv, este projeto também representa uma etapa prática de desenvolvimento das minhas habilidades em:
+Além de atender às necessidades reais da marca Suzana Carv, este projeto representa uma etapa prática do desenvolvimento das minhas habilidades em:
 
 Desenvolvimento Front-end
 React
