@@ -1,71 +1,124 @@
 # Suzana Carv — Site Institucional
 
-![Suzana Carv Website](https://via.placeholder.com/1200x600)
+![Suzana Carv — Site Institucional](docs/screenshots/home.png)
 
-## Sobre o projeto
+Site institucional responsivo desenvolvido para a marca **Suzana Carv**, especializada em design de sobrancelhas.
 
-Site institucional desenvolvido para a marca **Suzana Carv**, especializada em design de sobrancelhas.
+O projeto foi desenvolvido com foco em experiência do usuário, apresentação profissional da marca, responsividade e conversão de visitantes em clientes.
 
-O projeto foi criado com foco em uma experiência digital profissional, apresentando os serviços da marca, portfólio de trabalhos e canais de contato para clientes.
+🌐 Projeto online
 
-A aplicação foi desenvolvida utilizando React, com arquitetura organizada em componentes, páginas, rotas e estilos separados.
+O projeto está publicado em produção e integrado à Vercel.
 
-## Objetivos do projeto
+Site: https://suzana-carv-site.vercel.app
 
-- Criar uma presença digital profissional para a marca;
-- Apresentar serviços e trabalhos realizados;
-- Melhorar a experiência do usuário;
-- Desenvolver uma interface responsiva para diferentes dispositivos.
+📌 Sobre o projeto
 
-## Tecnologias utilizadas
+O site foi desenvolvido para apresentar a marca Suzana Carv no ambiente digital, destacando seus serviços, técnicas, portfólio, depoimentos e canais de contato.
 
-### Front-end
+A estrutura foi planejada para proporcionar uma navegação simples, elegante e intuitiva, com foco no público feminino e na conversão através dos canais de atendimento.
 
-- React
-- JavaScript
-- Vite
-- Bootstrap
-- CSS3
-- React Router DOM
+✨ Principais funcionalidades
+Página inicial institucional
+Apresentação da marca
+Página de serviços
+Portfólio de trabalhos
+Depoimentos de clientes
+Página de contato
+Integração com WhatsApp
+Integração com Instagram
+Formulário de contato
+Assistente virtual
+Layout responsivo para desktop, tablet e dispositivos móveis
+Navegação entre páginas utilizando React Router
+SEO básico e configuração para compartilhamento
+Deploy em produção através da Vercel
+🛠️ Tecnologias utilizadas
+React
+JavaScript
+Vite
+Bootstrap
+React Router
+Framer Motion
+React Icons
+Swiper
+EmailJS
+CSS
+HTML5
+Git
+GitHub
+Vercel
+🧩 Estrutura do projeto
+suzana_carv_homepage/
+│
+├── api/
+│   └── chat.js
+│
+├── docs/
+│   └── screenshots/
+│       └── home.png
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── routes/
+│   └── styles/
+│
+├── .gitignore
+├── GUIA_EMAILJS.md
+├── index.html
+├── package.json
+├── vercel.json
+└── vite.config.js
+🎨 Interface e experiência
 
-### Bibliotecas
+O projeto utiliza uma identidade visual desenvolvida especificamente para a marca, com foco em:
 
-- Framer Motion
-- React Icons
-- Swiper
-- React Helmet Async
+Hierarquia visual
+Tipografia
+Espaçamento
+Responsividade
+Microinterações
+Call-to-actions
+Apresentação de imagens
+Experiência de navegação
+Conversão de visitantes
+📱 Responsividade
 
-### Design e ferramentas
+A interface foi desenvolvida seguindo uma abordagem responsiva, permitindo a utilização do site em diferentes tamanhos de tela:
 
-- Figma
-- UI/UX Design
-- Git
-- GitHub
-- VS Code
-- Vercel
+Desktop
+Notebook
+Tablet
+Smartphone
+🚀 Deploy
 
-## Funcionalidades
+O projeto está hospedado na Vercel e configurado para integração com o repositório GitHub.
 
-✅ Página inicial  
-✅ Apresentação dos serviços  
-✅ Portfólio de trabalhos  
-✅ Depoimentos de clientes  
-✅ Página de contato  
-✅ Integração com WhatsApp  
-✅ Layout responsivo para desktop, tablet e mobile  
-✅ Animações e melhorias de experiência do usuário
+A branch principal utilizada no projeto é:
 
-## Deploy
+main
+📚 Objetivo do projeto
 
-Projeto publicado:
+Além de atender às necessidades reais da marca Suzana Carv, este projeto também representa uma etapa prática de desenvolvimento das minhas habilidades em:
 
-https://suzana-carv-site.vercel.app
+Desenvolvimento Front-end
+React
+JavaScript
+UI/UX
+Design responsivo
+Git e GitHub
+Deploy
+Organização de projetos
+Estruturação de aplicações web
+👨‍💻 Desenvolvido por
 
-## Desenvolvido por
+Carmindo Vasconcelos
 
-**Carmindo da Silva Vasconcelos**
+Desenvolvedor Front-end em formação, com foco em desenvolvimento web, React, JavaScript, UI/UX e experiências digitais responsivas.
 
-Web Designer & Front-end Developer
-
-GitHub:
-https://github.com/carmindo-debug
+⭐ Projeto desenvolvido como parte do meu portfólio profissional.
